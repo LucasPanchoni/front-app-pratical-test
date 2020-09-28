@@ -1,0 +1,26 @@
+<h2 class="text-primary">Data Plans</h2>
+<hr />
+
+<h4 class="homeText">
+  We’ve doubled the data, not the price.
+  <br/>
+  Enjoy double the data on our Large data plan, now with 200GB for $75 month-to-month.
+  <br/>
+  Choose your data on a month-to-month plan with no lock-in contract,
+  you have the flexibility to change your plan size once a month.
+  <br/>
+  Bring your own tablet or mobile broadband device, or add on a new one and pay it off over 24 months.
+  <br/>
+  <br/>
+  <h2 class="text-primary">Choose a data-plan!</h2>
+</h4>
+
+<section>
+  <ol class="list-group">
+    <div class="row plans-lines">
+      <li class="list-group-item plans-item" *ngFor= "let plans of plansList">
+        <app-plans-list-item [plans]="plans"></app-plans-list-item>
+      </li>
+  </div>
+  </ol>
+</section>

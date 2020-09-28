@@ -1,0 +1,55 @@
+
+<div *ngIf="alert==1" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> Your data-plan has been changed!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div *ngIf="alert==-1" class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Error!</strong> Something went wrong, please try again later.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<h2 class="text-primary">Data Plan Details</h2>
+<hr />
+<div *ngIf="plans">
+  <h2>{{plans.title}}</h2>
+  <h2>{{plans.desc}}</h2>
+  <h3>{{plans.price}} month to month</h3>
+  <br/>
+  <h4><pre>{{plans.details}}</pre></h4>
+</div>
+
+<br />
+<div class ="detailsButton">
+  <button type="button" [routerLink] = "['/']" class="btn btn-secondary mr-1">
+    RETURN
+  </button>
+
+  <button *ngIf="plans" type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirmationPopUp"  [disabled]= "plans.id == idPlanActive">
+    SELECT
+  </button>
+</div>
+
+<div class="modal fade" id="confirmationPopUp" tabindex="-1" role="dialog" aria-labelledby="confirmationPopUpLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmationPopUpLabel">Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to activate this plan?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+        <button (click)="onSubmit()" type="button"  class="btn btn-primary mr-1" data-dismiss="modal">CONFIRM</button>
+      </div>
+    </div>
+  </div>
+</div>

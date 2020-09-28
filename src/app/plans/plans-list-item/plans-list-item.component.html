@@ -1,0 +1,13 @@
+  <div>
+    <button type="button" [routerLink] = "['/view', plans.id]" [ngClass] = "{
+      'selectedPlan': plans.id == idPlanActive,
+      'regularPlan': plans.id != idPlanActive
+    }">
+      <div [innerHTML]= "plans.title"></div>
+      <div>
+        <div [innerHTML]= "plans.desc"></div>
+        <div [innerHTML]= "plans.price"></div>
+      </div>
+
+    </button>
+  </div>

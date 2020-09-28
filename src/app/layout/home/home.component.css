@@ -1,0 +1,25 @@
+header{
+  height: 70px;
+}
+
+.label-user{
+  font-size: large;
+  color: white;
+}
+.label-user:hover{
+  color: white;
+}
+
+.label-logout{
+  font-size: small;
+  color: white;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}

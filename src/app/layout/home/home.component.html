@@ -1,0 +1,21 @@
+<header>
+  <nav class="navbar fixed-top navbar-dark bg-primary">
+    <a class="navbar-brand" [routerLink]="['/']" >ACME</a>
+    <div>
+      <a class="label-user" >{{login}}</a>
+      <br>
+      <a class="label-logout" (click) = "logout()" [routerLink]="['/login']">Logout</a>
+    </div>
+  </nav>
+
+</header>
+
+<section>
+  <main class="container">
+    <router-outlet></router-outlet>
+  </main>
+</section>
+
+<footer class="footer bg-primary">
+  <a>ACME FOOTER</a>
+</footer>
